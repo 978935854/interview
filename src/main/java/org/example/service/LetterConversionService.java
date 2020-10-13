@@ -5,5 +5,5 @@ package org.example.service;
  */
 public interface LetterConversionService {
 
-    public String getLetterCombinations(Integer[] inputArr) ;
+    public String getLetterConversion(Integer[] inputNumArr) ;
 }

@@ -1,15 +1,18 @@
 package org.example.service.impl;
 
+import com.sun.deploy.util.StringUtils;
 import org.example.service.LetterConversionService;
+import org.example.utils.ParamCheckUtil;
 
 import java.util.*;
 
 import static org.example.utils.DigitMappingUtil.getMapping;
 
 public class LetterConversionForZeroToNineServiceImpl implements LetterConversionService {
-    public String getLetterCombinations(Integer[] inputArr) {
+    public String getLetterConversion(Integer[] inputNumArr) {
+        ParamCheckUtil.checkInputZeroToNine(inputNumArr);
         List<String> ret=new ArrayList<String>();
-        for(Integer splitDataNum : inputArr){
+        for(Integer splitDataNum : inputNumArr){
             String strSplitDataNum = splitDataNum+"";
             int length=ret.size();
             StringBuilder substring= new StringBuilder();
@@ -31,7 +34,6 @@ public class LetterConversionForZeroToNineServiceImpl implements LetterConversio
                 }
             }
         }
-        List<String> listNew = new ArrayList<String>(new TreeSet<String>(ret));
-        return listNew.toString();
+        return StringUtils.join(new TreeSet<String>(ret),",").replace(" ","");
     }
 }
