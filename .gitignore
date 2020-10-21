@@ -1,0 +1,17 @@
+#maven
+**/target
+
+#log
+*.log
+
+#eclipse
+.classpath
+.project
+.settings
+
+#IntelliJ IDEA
+.idea
+*.iml
+
+#windows shell
+*.bat
